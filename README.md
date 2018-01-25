@@ -1,6 +1,10 @@
 # EzWork
 Recently merged with Small Job Finder.
 
-Need to Update Release Plan to the one for EzWork.
+Renamed Project to EzWork.
 
-Need to Upload the Sprint Plan for Sprint #1.
+# Needs To Be Done
+
+Update Release Plan to the one for EzWork.
+
+Upload the Sprint Plan for Sprint #1.
