@@ -54,30 +54,42 @@ function create_cancel(){
     document.getElementById("login_div").style.display = "block";
 }
 
+function test(userID){
+	return firebase.database().ref('users/' + userID).once('value', function(snapshot){
+		false;
+	});
+	return true;
+}
+
 function create(){
   var userEmail = document.getElementById("create_email_field").value;
   var userPass = document.getElementById("create_password_field").value;
   var userID = document.getElementById("create_userid_field").value;
   // search users database to make sure userID is unique //
-  // code goes here
-  // error and break if not
-  /////////////////////////////////////////////////////////
-  var success = true;
-  firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-	// Handle Errors here.
-	success = false;
-	var errorCode = error.code;
-	var errorMessage = error.message;
-	window.alert("Error : " + errorMessage);
-	});
-  if(success){
-	  // Add new user to database
-	  window.alert("Sucessful account creation? " + userID);
-	  firebase.database().ref('users/' + userID).set({
-			username: userID,
-			email: userEmail,
-			type: "finder"});
-  }
+  return firebase.database().ref('users/' + userID).once('value', function(snapshot) {
+	var username = (snapshot.val() && snapshot.val().username);
+	window.alert("Username: " + username);
+	if(username == null){
+		window.alert("username is unique");
+		var success = true;
+		firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+		// Handle account creation errors here.
+		success = false;
+		var errorCode = error.code;
+		var errorMessage = error.message;
+		window.alert("Error : " + errorMessage);
+		});
+		if(success){
+			window.alert("Successful account creation: "+userID);
+			firebase.database().ref('users/' + userID).set({
+				username: userID,
+				email: userEmail,
+				type: "finder"});
+		}
+	}else{
+		window.alert("Username not unique");
+	}
+  });
 }
 
 function logout(){
