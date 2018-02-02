@@ -10,7 +10,7 @@ body{
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 11px;
+    /*margin-top: 11px;*/
 }
 
 #Header{
@@ -21,7 +21,7 @@ body{
 #head{
 	/*text-align: center;*/
 	color: white;
-	font-size:400%;
+	font-size:300%;
 }
 /*
 #Menu{
@@ -68,12 +68,27 @@ form{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 200px;
 }
-/*
-#but{
+
+#welcome{
 	float: right;
-	
+	display: block;
+	width: 15%;
+	height: 55%;
+	background: blue;
+	text-align:center;
+	margin-top: -10px;
+	color: #fff;
+	}
+
+#welcomeUser{
+	float:right;
+	display: none;
+	width: 15%;
+	height: 45%;
+	background: yellow;
+	text-align: center;
+	color: #fff;
 }
-*/
 
 /* Modal Content/Box */
 .modal-content {
