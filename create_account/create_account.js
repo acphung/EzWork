@@ -1,6 +1,7 @@
 function create_cancel(){
 	// redirect user to homepage here //
 	// *********** ADD CODE **********
+	window.location.href = "./main/main.html";
 }
 
 function create(){
@@ -41,6 +42,7 @@ function create(){
 				type: acctype});
 			//we succeeded so redirect user to homepage here //
 			// ********* ADD CODE *********
+			window.location.href = "./main/main.html";
 		}).catch(function(error) {
 		// Handle account creation errors here.
 		var errorCode = error.code;
