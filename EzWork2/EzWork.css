@@ -1,0 +1,44 @@
+
+
+body{
+	background-color: #C0C0C0;
+}
+
+#title{
+    text-align: center;
+    width: 50%;
+    color: aqua;
+    background-color: bisque;
+}
+
+/* link list finish from book */
+nav{
+    float: left;
+    width: 20%;
+    height: 190px;
+    background: #F3F3F3;
+}
+
+/* Login box */
+form{
+	margin: auto;
+	width: 20%;
+	max-width: 300px;
+	background: #F3F3F3;
+	padding: 20px;
+	float: right;
+}
+
+#log{
+	text-align: center;
+}
+
+input{
+	display:block;
+	padding: 5px;
+	width: 100%;
+}
+
+input[type="submit"]:active{
+    transform: scale(0.95);
+}

@@ -1,0 +1,60 @@
+<DOCTYPE html>
+<html lang="en">
+	<head>
+	<title> Ezwork2 </title>
+	<meta charset="utf-8" />
+	<link href="EzWork2.css" rel="stylesheet" type="text/css">
+	<!-- <h1 div id="title">EzWork</h1> -->
+	</head>
+	<body>
+        <div id="Container">
+        <div id="Header"><h1 div id="head">EzWork</h1> <div id="but"><button onclick="document.getElementById('id01').style.display='block'">Login</button></div>
+		<!-- Button to open the modal login form -->
+			
+
+			<!-- The Modal -->
+			<div id="id01" class="modal"><span onclick="document.getElementById('id01').style.display='none'" 
+			class="close" title="Close Modal">&times;</span>
+
+			<!-- Modal Content -->
+			<form class="modal-content animate" action="/action_page.php">
+				<div class="imgcontainer">
+				<img src="img_avatar2.png" alt="Avatar" class="avatar">
+				</div>
+
+			<div class="container"><label><b>Username</b></label>
+				<input type="text" placeholder="Enter Username" name="uname" required>
+				<br>
+				<label><b>Password</b></label>
+				<input type="password" placeholder="Enter Password" name="psw" required>
+				<br>
+				<button type="submit">Login</button>
+				<label>
+					<input type="checkbox" checked="checked"> Remember me
+				</label>
+			</div>
+
+			<div class="container" style="background-color:#f1f1f1">
+				<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+				<span class="psw">Forgot <a href="#">password?</a></span>
+			</div>
+			</form>
+			</div>
+		</div>
+		</div>
+			
+      
+        <div id="SideBar">
+           <!--<form>
+			<h2 div id="log">Login</h2>
+			<input type="text" placeholder="&#128272; User Name" name >
+			<input type="password" placeholder="&#128274; Password" name >
+			<input type="submit" value="signin" ><input type="submit" value="signup">
+		  </form> -->
+        </div>
+        <div id="MainBody"></div>
+        <div id="Footer"></div>
+        </div>
+
+	</body>
+</html>
