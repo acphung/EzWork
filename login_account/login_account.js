@@ -13,37 +13,22 @@ function gotoSignup() {
 }
 
 function login() {
-    document.getElementById("bad_password").style.display = "none";
-	document.getElementById("bad_userid").style.display = "none";
+        document.getElementById("bad_login").style.display = "none";
 
 	var userPass = document.getElementById("password_field").value;
-	var userID = document.getElementById("userid_field").value;
+	var userEmail = document.getElementById("email_field").value;
 
-    // Search Database for the User //
-    firebase.database().ref('users/' + userID).once('value', function(snapshot) {
-        var username = (snapshot.val() && snapshot.val().username);
-        if(username !== null){
-            //username Exists//
-            var userEmail = snapshot.val().email;
-            firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function() {
+        firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function() {
                 //Login is Successful //
                 // ********* ADD CODE *********
                 // alert("Login Successful!");
                 // login_display();
-            }).catch(function(error) {
+                document.getElementById("bad_login").style.display = "none";
+        }).catch(function(error) {
                 // Handle account creation errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // determine if email or password error and display //
-                if(errorCode == "auth/wrong-password"){
-                    document.getElementById("bad_password").style.display = "block";
-                }
-            });
-        }else{
-            // Username is Incorrect or Doesn't Exist //
-            document.getElementById("bad_userid").style.display = "block";
-        }
-    });
+                document.getElementById("login_error").innerHTML = error.message;
+                document.getElementById("bad_login").style.display = "block";
+        });
 }
 
 function logout() {
