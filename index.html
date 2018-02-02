@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Test HomePage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="./create_account/create_accountstyle.css" />
+    </head>
+    <body>
+        <div id="main-div" class="main-div">
+            <div id="login-div" style="display:none">
+                <h3>Login to EzWork!</h3>
+
+                <div id="userid_div" class="box-div">
+                    <div id="userid_box" class="input-div">
+                        <input type="userid" placeholder="User ID..." id="userid_field" />
+                    </div>
+
+                    <div id="bad_userid" class="error-text">
+                        <p id="userid_error"> Incorrect UserID. </p>
+                    </div>
+                </div>
+                <div id="password_div" class="box-div">
+                    <div id="password_box" class="input-div">
+                        <input type="password" placeholder="Password..." id="password_field" />
+                    </div>
+
+                    <div id="bad_password" class="error-text">
+                        <p id="password_error"> Incorrect Password. </p>
+                    </div>
+                </div>
+
+                <div  id="buttons" class="buttons-div">
+                    <button id="button_login" onclick="login()">Login</button>
+                    <button id="button_signup" onclick="gotoSignup()">Sign Up</button>
+                </div>
+            </div>
+            <div id="logged-in-div" style="display:none">
+                <h3>Hello User!</h3>
+                <div  id="buttons" class="buttons-div">
+                    <button id="button_logout" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCpAKm-xa-Tz3Cix-3io2C--dby4unJbow",
+          authDomain: "ezwork-89a16.firebaseapp.com",
+          databaseURL: "https://ezwork-89a16.firebaseio.com",
+          projectId: "ezwork-89a16",
+          storageBucket: "ezwork-89a16.appspot.com",
+          messagingSenderId: "526263272938"
+        };
+        firebase.initializeApp(config);
+        </script>
+        <script src="login_account/login_account.js"></script>
+    </body>
+</html>
