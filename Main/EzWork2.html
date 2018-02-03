@@ -16,7 +16,7 @@
                 <button onclick="gotoSignup()">Signup</button></div> 
         <div id="welcome_user" class="welcome">
                 <h4 id="welcome_user_text">Welcome User</h4> 
-                <button id="logout_button" onclick="logout()">Sign Out</button></div>
+                <button id="logout_button" onclick="logout()">Logout</button></div>
         <img id="logo" src="logo1.png"> 
         <h1 div id="head">EzWork</h1></div>
 		<!-- Button to open the modal login form -->
@@ -51,10 +51,17 @@
 			
       
         <div id="SideBar">
-                <li><a href="#">Button1</a></li>
-                <li><a href="#">Button2</a></li>
-                <li><a href="#">Button3</a></li>
-                <li><a href="#">Button4</a></li>
+		<!-- Logged in buttons -->
+                <li><a href="#">My Profile</a></li>
+			<!-- Finders only -->
+                <li><a href="#">Advanced Search</a></li>
+			<!-- Employers only -->
+                <li><a href="#">Post Job</a></li>
+		<!-- Universal buttons -->
+				<li><a href="#">About EzWork</a></li>
+				<li><a href="#">Tutorial</a></li>
+                <li><a href="#">Logout</a></li>
+				<li><a href="#">Contact Us</a></li>
            <!--<form>
 			<h2 div id="log">Login</h2>
 			<input type="text" placeholder="&#128272; User Name" name >
@@ -67,22 +74,9 @@
                 <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Jobs Search..">
                 </div>
         	
-        	<ul id="jobList">
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-			  <li><p>Job1</p></li>
-</ul>
-</div>
+        	<ul id="jobList"></ul>
+			<!-- Javascript adds elements -->
+	</div>
         <div id="Footer"></div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>

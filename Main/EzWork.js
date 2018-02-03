@@ -65,3 +65,20 @@ function toggle_visibility(id) {
    else
         e.style.display = 'block';
 }
+
+function page_init(){
+	var array = ['Job 1', 'Job 2', 'Job 3', 'Job 4', 'Job 5', 'Job 6', 'Job 7', 'Job 8', 'Job 9', 'Job 9', 'Job 10', 'Job 11', 'Job 12', 'Job 13', 'Job 14', 'Job 15', 'Job 16', 'Job 17'],
+    // Reduce will iterate over all the array items and returns a single value.
+    listItems = array.reduce((result, item) => {
+    // Add a string to the result for the current item. This syntax is using template literals.
+    result += `<li><p>${item}</p></li>`;
+    // Always return the result in the reduce callback, it will be the value or result in the next iteration.
+    return result;
+  }, ''); // The '' is an empty string, it is the initial value result.
+  // Get the element from the DOM in which to display the list, this should be an ul or ol element.
+  resultElement = document.getElementById('jobList');
+
+// Set the inner HTML
+resultElement.innerHTML = listItems;
+}
+page_init();
