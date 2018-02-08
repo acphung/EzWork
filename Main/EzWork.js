@@ -28,9 +28,7 @@ function login() {
         }else{
         firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function() {
                 //Login is Successful //
-                // ********* ADD CODE *********
-                //alert("Login Successful!");
-                // login_display();
+				document.getElementById("psw").value = "";
                 document.getElementById("bad_login").style.display = "none";
                 toggle_visibility("login_pop");
                 login_display();
@@ -47,16 +45,21 @@ function logout() {
 
 firebase.auth().onAuthStateChanged(function(user){
     if(user) {
-        document.getElementById("welcome_guest").style.display = "none";
-        document.getElementById("welcome_user_text").innerHTML = "Hello " +
-                firebase.auth().currentUser.email;
-        document.getElementById("welcome_user").style.display = "block";
+		firebase.database().ref('users/' + user.email.replace('.','(')).once('value', function(snapshot) {
+			var username = snapshot.val().username;
+			document.getElementById("welcome_guest").style.display = "none";
+			document.getElementById("welcome_user_text").innerHTML = "Hello " +
+					username;
+			document.getElementById("welcome_user").style.display = "block";});
     } else {
         document.getElementById("welcome_guest").style.display = "block";
         document.getElementById("welcome_user").style.display = "none";
     }
 });
 
+function open_job_popup(id){
+	window.alert("Job ID \""+id+"\" clicked.");
+}
 
 function toggle_visibility(id) {
    var e = document.getElementById(id);
@@ -66,12 +69,18 @@ function toggle_visibility(id) {
         e.style.display = 'block';
 }
 
+
 function page_init(){
-	var array = ['Job 1', 'Job 2', 'Job 3', 'Job 4', 'Job 5', 'Job 6', 'Job 7', 'Job 8', 'Job 9', 'Job 9', 'Job 10', 'Job 11', 'Job 12', 'Job 13', 'Job 14', 'Job 15', 'Job 16', 'Job 17'],
+	var array = [];
+	for(var i = 1; i <= 100; i++){
+		array.push(i.toString());
+	}
     // Reduce will iterate over all the array items and returns a single value.
     listItems = array.reduce((result, item) => {
     // Add a string to the result for the current item. This syntax is using template literals.
-    result += `<li><p>${item}</p></li>`;
+    result += "<li><p id='Job" + `${item}` + "' onclick=\"open_job_popup('Ident Goes Here')\">";
+	result += "Job" + `${item}`;
+	result += "</p></li>";
     // Always return the result in the reduce callback, it will be the value or result in the next iteration.
     return result;
   }, ''); // The '' is an empty string, it is the initial value result.

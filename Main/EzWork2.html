@@ -17,8 +17,8 @@
         <div id="welcome_user" class="welcome">
                 <h4 id="welcome_user_text">Welcome User</h4> 
                 <button id="logout_button" onclick="logout()">Logout</button></div>
-        <img id="logo" src="logo1.png"> 
-        <h1 div id="head">EzWork</h1></div>
+        <img id="banner" src="banner.png"> 
+        <h1 div id="head"></h1></div>
 		<!-- Button to open the modal login form -->
 			
 
@@ -51,7 +51,7 @@
 			
       
         <div id="SideBar">
-		<!-- Logged in buttons -->
+                <!-- Logged in buttons -->
                 <li><a href="#">My Profile</a></li>
 			<!-- Finders only -->
                 <li><a href="#">Advanced Search</a></li>
@@ -73,10 +73,10 @@
                 <div id="searchbar">
                 <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Jobs Search..">
                 </div>
-        	
-        	<ul id="jobList"></ul>
-			<!-- Javascript adds elements -->
-	</div>
+        	<div id="jobsDiv">
+        	<ul id="jobList"></ul></div>
+			<!-- Items added by JS -->
+</div>
         <div id="Footer"></div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>

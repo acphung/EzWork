@@ -36,6 +36,7 @@ button, a{
     width: 25%;
     height: 100%;
     padding-top: 10px;
+	padding-bottom: 68px;
     background-color: #006A00;
     list-style-type: none;
     float: left;
@@ -45,8 +46,8 @@ button, a{
     border: 2px solid #fff; /* Add a border to all links */
     width: 80%;
     margin-top: -2px; /* Prevent double borders */
-    margin-left: 7%;
-    background-color: #006A00;
+    margin-left: 6%;
+    background-color: #006A00; /* Grey background color */
     border-radius: 5px;
     padding: 12px; /* Add some padding */
     text-decoration: none; /* Remove default text underline */
@@ -67,9 +68,10 @@ button, a{
     float: right;
 }
 
-#logo{
-    width: 150px;
-    height: 150px;
+#banner{
+	margin-left: 10px;
+    width: 450px;
+    height: 170px;
     display: inline-block;
 }
 
@@ -126,17 +128,7 @@ button, a{
         color: black;
         margin: 0px;
 }
-/*
-form{
-	margin: auto;
-	width: 70%;
-	max-width: 300px;
-	background: #F3F3F3;
-	padding: 20px;
-	float: right;
-	height: 50%;
-}
-*/
+
 
 /* The Modal (background) */
 .modal {
@@ -267,6 +259,17 @@ form{
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; 
     width: 100%; /* Search bar width size */
+}
+
+#mySearch:focus {
+	outline: none; /* get rid of annoying blue outline */
+	/* pick a new color this is placeholder */
+	border: 1px solid #5070ff; /* blue border on focus */
+}
+
+#jobsDiv{
+	overflow: auto;
+	height: 100%;
 }
 
 #jobList {
