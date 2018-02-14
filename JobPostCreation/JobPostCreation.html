@@ -3,7 +3,7 @@
 	<head>
 	<title> Ezwork2 </title>
 	<meta charset="utf-8" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link href="JobPostCreation.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="../images/logo2.png">
 	<!-- <h1 div id="title">EzWork</h1> -->
@@ -12,6 +12,10 @@
 	
         <div id="Container">
         <div id="Header">
+		<div id="welcome_guest" class="welcome" style="display: none;">
+                <h4>Welcome to EzWork!</h4>
+                <button onclick="toggle_visibility('login_pop')">Login</button> 
+                <button onclick="gotoSignup()">Signup</button></div> 
 		<div id="welcome_user" class="welcome">
                 <h4 id="welcome_user_text">Welcome User</h4> 
                 <button id="logout_button" onclick="logout()">Logout</button></div>
@@ -31,22 +35,17 @@
         <div id="SideBar">
 			<div id="ScrollBar">
                 <!-- Logged in buttons -->
-                <li><a href="#">My Profile</a></li>
-			<!-- Finders only -->
-                <li><a href="#">Advanced Search</a></li>
-			<!-- Employers only -->
-                <li><a href="../Main/EzWork2.html">Home</a></li>
-		<!-- Universal buttons -->
+                <li id="prof_button" style="display: none;">
+				<a href="#">My Profile</a></li>
+				<!-- Finders only -->
+                <li id="adv_search_button" style="display: none;">
+				<a href="#">Advanced Search</a></li>
+				<!-- Universal buttons -->
+                <li><a href="../Main/EzWork2.html">Home Page</a></li>
 				<li><a href="#">About EzWork</a></li>
 				<li><a href="#">Tutorial</a></li>
                 <li><a href="#">Logout</a></li>
 				<li><a href="#">Contact Us</a></li>
-           <!--<form>
-			<h2 div id="log">Login</h2>
-			<input type="text" placeholder="&#128272; User Name" name >
-			<input type="password" placeholder="&#128274; Password" name >
-			<input type="submit" value="signin" ><input type="submit" value="signup">
-		  </form> -->
 		  </div>
         </div>
         <div id="MainBody">
@@ -81,6 +80,7 @@
         };
         firebase.initializeApp(config);
         </script>
+		<script src="../scripts/universal.js"></script>
         <script src="JobPostScripts.js"></script>
 
 	</body>

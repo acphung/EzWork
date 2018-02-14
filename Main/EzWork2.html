@@ -3,6 +3,7 @@
 	<head>
 	<title> Ezwork2 </title>
 	<meta charset="utf-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link href="EzWork2.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="../images/logo2.png">
 	<!-- <h1 div id="title">EzWork</h1> -->
@@ -17,12 +18,12 @@
         <div id="welcome_user" class="welcome">
                 <h4 id="welcome_user_text">Welcome User</h4> 
                 <button id="logout_button" onclick="logout()">Logout</button></div>
-        <img id="banner" src="../images/banner.png"> 
+        <img id="banner" src="../images/banner.png">
+		</div>
 		<!-- Button to open the modal login form -->
 			
 
-			<!-- The Modal -->
-		<div id="popups" onclick="hide_popups()" style="display: none;">
+			<!-- The Popups -->
             <div id="login_pop" class="modal">
 				<div id="login_pop_inner">
 			        <!-- Modal Content -->
@@ -48,11 +49,12 @@
 					<img id="job_pop_pic" border ="0" src="../images/ProfilePic.png">
 					<h3 id="job_pop_title">Title Goes Here</h3>
 					
-					<p id="job_pop_employer">Employer Name Employer Name Employer Name Employer Name Employer Name </p>
+					<p id="job_pop_employer">Employer Name</p>
 					<p id="job_pop_type">Type</p>
+					<p id="job_pop_pay">Pay</p>
 					<p id="job_pop_loc">Location</p>
 					<p id="job_pop_dist">Distance</p>
-					<p id="job_pop_notes">Description of Job goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+					<p id="job_pop_notes">Description of Job</p>
 					<p id="job_pop_tags">Tags Tags Tags Tags Tags</p>
 					<button onclick="toggle_visibility('job_pop');">Accept</button>
 					<button onclick="toggle_visibility('job_pop');">Decline</button>
@@ -61,17 +63,19 @@
 			</div>
 		</div>
 	</div>
-        </div>
 			
       
         <div id="SideBar">
                 <!-- Logged in buttons -->
-                <li><a href="#">My Profile</a></li>
-			<!-- Finders only -->
-                <li><a href="#">Advanced Search</a></li>
-			<!-- Employers only -->
-                <li><a href="../JobPostCreation/JobPostCreation.html">Post Job</a></li>
-			<!-- Universal buttons -->
+                <li id="prof_button" style="display: none;">
+				<a href="#">My Profile</a></li>
+				<!-- Finders only -->
+                <li id="adv_search_button" style="display: none;">
+				<a href="#">Advanced Search</a></li>
+				<!-- Employers only -->
+                <li id="post_job_button" style="display: none;">
+				<a href="../JobPostCreation/JobPostCreation.html">Post Job</a></li>
+				<!-- Universal buttons -->
 				<li><a href="#">About EzWork</a></li>
 				<li><a href="#">Tutorial</a></li>
                 <li><a href="#">Logout</a></li>
@@ -107,6 +111,7 @@
         firebase.initializeApp(config);
         </script>
         <script src="EzWork.js"></script>
+        <script src="../scripts/universal.js"></script>
 
 	</body>
 </html>

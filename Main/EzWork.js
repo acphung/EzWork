@@ -1,14 +1,4 @@
-function login_display () {
-    if(firebase.auth().currentUser) {
-        document.getElementById("welcome_guest").style.display = "none";
-        document.getElementById("welcome_user_text").innerHTML = "Hello " +
-                firebase.auth().currentUser.email;
-        document.getElementById("welcome_user").style.display = "block";
-    } else {
-        document.getElementById("welcome_guest").style.display = "block";
-        document.getElementById("welcome_user").style.display = "none";
-    }
-}
+
 
 function gotoSignup() {
     window.location.href = "../create_account/create_account.html";
@@ -31,7 +21,6 @@ function login() {
 				document.getElementById("psw").value = "";
                 document.getElementById("bad_login").style.display = "none";
                 toggle_visibility("login_pop");
-                login_display();
         }).catch(function(error) {
                 // Handle account creation errors here.
                 document.getElementById("login_error").innerHTML = error.message;
@@ -39,23 +28,6 @@ function login() {
         });}
 }
 
-function logout() {
-    firebase.auth().signOut();
-}
-
-firebase.auth().onAuthStateChanged(function(user){
-    if(user) {
-		firebase.database().ref('users/' + user.email.replace('.','(')).once('value', function(snapshot) {
-			var username = snapshot.val().username;
-			document.getElementById("welcome_guest").style.display = "none";
-			document.getElementById("welcome_user_text").innerHTML = "Hello " +
-					username;
-			document.getElementById("welcome_user").style.display = "block";});
-    } else {
-        document.getElementById("welcome_guest").style.display = "block";
-        document.getElementById("welcome_user").style.display = "none";
-    }
-});
 
 function open_job_popup(id){
 	window.alert("Job ID \""+id+"\" clicked.");
@@ -68,6 +40,7 @@ function open_job_popup(id){
 		var tags = "Tags Not Yet Implimented";
 		var img = snapshot.val().pic;
 		var type = snapshot.val().type;
+		var pay = snapshot.val().pay;
 		/*etc*/
 		document.getElementById("job_pop_employer").innerHTML = empname;
 		document.getElementById("job_pop_title").innerHTML = title;
@@ -76,24 +49,39 @@ function open_job_popup(id){
 		document.getElementById("job_pop_dist").innerHTML = dist;
 		document.getElementById("job_pop_tags").innerHTML = tags;
 		document.getElementById("job_pop_type").innerHTML = type;
+		document.getElementById("job_pop_pay").innerHTML = pay;
 		/*etc*/
 		toggle_visibility("job_pop"); /* or whatever it's called */
 	});
 }
 
-function toggle_visibility(id) {
-   var e = document.getElementById(id);
-   if(e.style.display == 'block'){
-        e.style.display = 'none';
-		document.getElementById("popups").style.display = 'none';
-   }else{
-        e.style.display = 'block';
-		document.getElementById("popups").style.display = 'block';}
-}
+
+$("#login_pop").mouseup(function(e) 
+{
+    var container = $("#login_pop_inner");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) 
+		&& container.has(e.target).length === 0) 
+    {
+        $("#login_pop").hide();
+    }
+});
+
+$("#job_pop").mouseup(function(e) 
+{
+    var container = $("#job_pop_inner");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) 
+		&& container.has(e.target).length === 0) 
+    {
+        $("#job_pop").hide();
+    }
+});
 
 function hide_popups(){
 	document.getElementById("login_pop").style.display = 'none';
-	document.getElementById("popups").style.display = 'none';
 	document.getElementById("job_pop").style.display = 'none';
 }
 

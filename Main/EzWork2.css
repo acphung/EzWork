@@ -271,7 +271,7 @@ button, a{
 }
 
 #mySearch {
-    background-image: url('searchIcon.png'); /* Add a search icon to input */
+    background-image: url('../images/searchIcon.png'); /* Add a search icon to input */
     background-position: 6px 10px; /* Position of the icon */
     background-repeat: no-repeat; /* Does not repeat image */
     border-radius: 10px;

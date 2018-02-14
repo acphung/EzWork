@@ -67,6 +67,11 @@ button, a{
   cursor: pointer;
 }
 
+#logout_button{
+        margin-right: auto;
+        margin-left: auto;
+}
+
 #overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
