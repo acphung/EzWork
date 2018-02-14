@@ -5,14 +5,17 @@
 	<meta charset="utf-8" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<link href="JobPostCreation.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="logo2.png">
+        <link rel="icon" href="../images/logo2.png">
 	<!-- <h1 div id="title">EzWork</h1> -->
 	</head>
 	<body>
 	
         <div id="Container">
         <div id="Header">
-        <img id="banner" src="banner.png"> 			
+		<div id="welcome_user" class="welcome">
+                <h4 id="welcome_user_text">Welcome User</h4> 
+                <button id="logout_button" onclick="logout()">Logout</button></div>
+        <img id="banner" src="../images/banner.png"> 			
 	</div>
         </div>
 		<div id="overlay" onclick="off()">
@@ -32,7 +35,7 @@
 			<!-- Finders only -->
                 <li><a href="#">Advanced Search</a></li>
 			<!-- Employers only -->
-                <li><a href="#">Post Job</a></li>
+                <li><a href="../Main/EzWork2.html">Home</a></li>
 		<!-- Universal buttons -->
 				<li><a href="#">About EzWork</a></li>
 				<li><a href="#">Tutorial</a></li>
@@ -78,7 +81,7 @@
         };
         firebase.initializeApp(config);
         </script>
-        <script src="EzWork.js"></script>
+        <script src="JobPostScripts.js"></script>
 
 	</body>
 </html>

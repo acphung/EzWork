@@ -4,7 +4,7 @@
 	<title> Ezwork2 </title>
 	<meta charset="utf-8" />
 	<link href="EzWork2.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="logo2.png">
+        <link rel="icon" href="../images/logo2.png">
 	<!-- <h1 div id="title">EzWork</h1> -->
 	</head>
 	<body>
@@ -17,22 +17,19 @@
         <div id="welcome_user" class="welcome">
                 <h4 id="welcome_user_text">Welcome User</h4> 
                 <button id="logout_button" onclick="logout()">Logout</button></div>
-        <img id="banner" src="banner.png"> 
-        <h1 div id="head"></h1></div>
+        <img id="banner" src="../images/banner.png"> 
 		<!-- Button to open the modal login form -->
 			
 
 			<!-- The Modal -->
-                <div id="login_pop" class="modal">
-			<div id="login_pop_inner">
-                                <span onclick="toggle_visibility('login_pop')"
-			         class="close" title="Close Modal">&times;</span>
-
+		<div id="popups" onclick="hide_popups()" style="display: none;">
+            <div id="login_pop" class="modal">
+				<div id="login_pop_inner">
 			        <!-- Modal Content -->
 			        <form class="modal-content animate" action="/action_page.php">
 				        <div class="imgcontainer">
 				                <img class="popup-content" 
-                                                src="img_avatar2.png" alt="Avatar" class="avatar">
+                                                src="../images/img_avatar2.png" alt="Avatar" class="avatar">
 				        </div>
 			        </form>
 			        <div class="container">
@@ -43,7 +40,24 @@
 				        <button onclick="login()">Login</button>
 				        <button onclick="toggle_visibility('login_pop')">Cancel</button>
 				        <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-                                </div>
+                    </div>
+				</div>
+			</div>
+			<div id="job_pop" class="modal">
+				<div id="job_pop_inner" class="container">
+					<img id="job_pop_pic" border ="0" src="../images/ProfilePic.png">
+					<h3 id="job_pop_title">Title Goes Here</h3>
+					
+					<p id="job_pop_employer">Employer Name Employer Name Employer Name Employer Name Employer Name </p>
+					<p id="job_pop_type">Type</p>
+					<p id="job_pop_loc">Location</p>
+					<p id="job_pop_dist">Distance</p>
+					<p id="job_pop_notes">Description of Job goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+					<p id="job_pop_tags">Tags Tags Tags Tags Tags</p>
+					<button onclick="toggle_visibility('job_pop');">Accept</button>
+					<button onclick="toggle_visibility('job_pop');">Decline</button>
+					
+				</div>
 			</div>
 		</div>
 	</div>
@@ -56,8 +70,8 @@
 			<!-- Finders only -->
                 <li><a href="#">Advanced Search</a></li>
 			<!-- Employers only -->
-                <li><a href="#">Post Job</a></li>
-		<!-- Universal buttons -->
+                <li><a href="../JobPostCreation/JobPostCreation.html">Post Job</a></li>
+			<!-- Universal buttons -->
 				<li><a href="#">About EzWork</a></li>
 				<li><a href="#">Tutorial</a></li>
                 <li><a href="#">Logout</a></li>
