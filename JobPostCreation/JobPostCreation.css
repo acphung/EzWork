@@ -42,7 +42,7 @@ button, a{
 	margin: 70px auto; 
 	text-align: left; 
 }
-#OverlayContainer{ 
+#overlayContainer{ 
 	background-color: #FFF; 
 	padding: 20px; 
 	border-radius: 4px;
@@ -67,23 +67,13 @@ button, a{
 
 
 #SideBar{
-	display: block;
     width: 25%;
-	height: auto;
+    height: 100%;
     padding-top: 10px;
-	position: relative;
 	padding-bottom: 68px;
     background-color: #006A00;
     list-style-type: none;
     float: left;
-	
-}
-#ScrollBar{
-	
-    width: 25%;
-	height: auto;
-	position: fixed;
-	
 }
 
 #SideBar li a {
@@ -98,7 +88,6 @@ button, a{
     font-size: 18px; /* Increase the font-size */
     color: #fff; /* Add a black text color */
     display: block; /* Make it into a block element to fill the whole list */
-
 }
  
 #SideBar li a:hover:not(.header) {
