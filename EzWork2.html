@@ -4,47 +4,64 @@
 	<title> Ezwork2 </title>
 	<meta charset="utf-8" />
 	<link href="EzWork2.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="logo2.png">
 	<!-- <h1 div id="title">EzWork</h1> -->
 	</head>
 	<body>
         <div id="Container">
-        <div id="Header"><h1 div id="head">EzWork</h1> <div id="but"><button onclick="document.getElementById('id01').style.display='block'">Login</button></div>
+        <div id="Header">
+        <div id="welcome_guest" class="welcome">
+                <h4>Welcome to EzWork!</h4>
+                <button onclick="toggle_visibility('login_pop')">Login</button> 
+                <button onclick="gotoSignup()">Signup</button></div> 
+        <div id="welcome_user" class="welcome">
+                <h4 id="welcome_user_text">Welcome User</h4> 
+                <button id="logout_button" onclick="logout()">Logout</button></div>
+        <img id="banner" src="banner.png"> 
+        <h1 div id="head"></h1></div>
 		<!-- Button to open the modal login form -->
 			
 
 			<!-- The Modal -->
-			<div id="id01" class="modal"><span onclick="document.getElementById('id01').style.display='none'" 
-			class="close" title="Close Modal">&times;</span>
+                <div id="login_pop" class="modal">
+			<div id="login_pop_inner">
+                                <span onclick="toggle_visibility('login_pop')"
+			         class="close" title="Close Modal">&times;</span>
 
-			<!-- Modal Content -->
-			<form class="modal-content animate" action="/action_page.php">
-				<div class="imgcontainer">
-				<img src="img_avatar2.png" alt="Avatar" class="avatar">
-				</div>
-
-			<div class="container"><label><b>Username</b></label>
-				<input type="text" placeholder="Enter Username" name="uname" required>
-				<br>
-				<label><b>Password</b></label>
-				<input type="password" placeholder="Enter Password" name="psw" required>
-				<br>
-				<button type="submit">Login</button>
-				<label>
-					<input type="checkbox" checked="checked"> Remember me
-				</label>
-			</div>
-
-			<div class="container" style="background-color:#f1f1f1">
-				<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-				<span class="psw">Forgot <a href="#">password?</a></span>
-			</div>
-			</form>
+			        <!-- Modal Content -->
+			        <form class="modal-content animate" action="/action_page.php">
+				        <div class="imgcontainer">
+				                <img class="popup-content" 
+                                                src="img_avatar2.png" alt="Avatar" class="avatar">
+				        </div>
+			        </form>
+			        <div class="container">
+				        <input type="text" placeholder="Email..." id="email">
+				        <input type="password" placeholder="Password..." id="psw">
+                                        <div id="bad_login" class="error-text">
+                                                <p id="login_error"> Sample Error Text </p></div>
+				        <button onclick="login()">Login</button>
+				        <button onclick="toggle_visibility('login_pop')">Cancel</button>
+				        <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+                                </div>
 			</div>
 		</div>
-		</div>
+	</div>
+        </div>
 			
       
         <div id="SideBar">
+                <!-- Logged in buttons -->
+                <li><a href="#">My Profile</a></li>
+			<!-- Finders only -->
+                <li><a href="#">Advanced Search</a></li>
+			<!-- Employers only -->
+                <li><a href="#">Post Job</a></li>
+		<!-- Universal buttons -->
+				<li><a href="#">About EzWork</a></li>
+				<li><a href="#">Tutorial</a></li>
+                <li><a href="#">Logout</a></li>
+				<li><a href="#">Contact Us</a></li>
            <!--<form>
 			<h2 div id="log">Login</h2>
 			<input type="text" placeholder="&#128272; User Name" name >
@@ -53,26 +70,56 @@
 		  </form> -->
         </div>
 
-        <!-- Here is the job listing stuff good luck bro and make more brownies :) -->
+        <!--JobList-->
 
         <div id="MainBody">
-        	<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Jobs Search..">
-        	
+                <div id="searchbar">
+                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Jobs Searching..">
+                </div>
+        	<div id="jobsDiv">
         	<ul id="jobList">
-			  <li><a href="#">Job1</a></li>
-			  <li><a href="#">Job2</a></li>
-			  <li><a href="#">Job3</a></li>
-			  <li><a href="#">Job4</a></li>
-			  <li><a href="#">Job5</a></li>
-			  <li><a href="#">Job6</a></li>
-			  <li><a href="#">Job7</a></li>
-			  <li><a href="#">Job8</a></li>
-			</ul>
+                 <div id="jobPost-container">
 
+            <!--Employer view profile and pics-->
+            <div id= "employerProfile">
+              <img id="image" src="img_avatar2.png" alt="Avatar" >
+              <div>
+                <a href="">View Employee Profile</a>
+              </div>
+            </div>
+
+            <!--Job Title and Pay/hour-->
+            <div id="workDetails">
+                <a href=""> Executive Chef of Whatever </a>
+              <div>
+                <p id="pay"> $5000/hr </p>
+              </div>
+            </div>
+
+          </div>
+
+            </ul>
         </div>
+			<!-- Items added by JS -->
+        </div>
+
 
         <div id="Footer"></div>
         </div>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCpAKm-xa-Tz3Cix-3io2C--dby4unJbow",
+          authDomain: "ezwork-89a16.firebaseapp.com",
+          databaseURL: "https://ezwork-89a16.firebaseio.com",
+          projectId: "ezwork-89a16",
+          storageBucket: "ezwork-89a16.appspot.com",
+          messagingSenderId: "526263272938"
+        };
+        firebase.initializeApp(config);
+        </script>
+        <script src="EzWork.js"></script>
 
 	</body>
 </html>
