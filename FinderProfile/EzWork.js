@@ -69,21 +69,6 @@ function toggle_visibility(id) {
         e.style.display = 'block';
 }
 
-$('textarea').keypress(function(event) {
-   if (event.which == 13) {
-      event.preventDefault();
-      var s = $(this).val();
-      $(this).val(s+"\n");
-   }
-});​
-function on() {
-    document.getElementById("overlay").style.display = "block";
-}
-
-function off() {
-    document.getElementById("overlay").style.display = "none";
-}
-
 
 function page_init(){
 	var array = [];

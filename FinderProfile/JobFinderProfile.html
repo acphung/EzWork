@@ -3,29 +3,17 @@
 	<head>
 	<title> Ezwork2 </title>
 	<meta charset="utf-8" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<link href="JobPostCreation.css" rel="stylesheet" type="text/css">
+	<link href="JobFinderProfile.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="logo2.png">
 	<!-- <h1 div id="title">EzWork</h1> -->
 	</head>
 	<body>
-	
         <div id="Container">
         <div id="Header">
 		
         <img id="banner" src="banner.png"> 			
 	</div>
         </div>
-		<div id="overlay" onclick="off()">
-			<div id="overlayWrapper">
-				<div id="overlayContainer">
-					<h3>Job Title</h3>
-					<p>Location</p>
-					<p>Date and Time</p>
-					<p>Description</p>
-				</div>
-			</div>
-		</div>
 			
       
         <div id="SideBar">
@@ -50,38 +38,36 @@
 		  </div>
         </div>
         <div id="MainBody">
-			<form id="JobCreationForm" style="width: 99%">		
-				<h3>Job Title</h3>
-				<input type="text" id="Title" style="width: 99%"; ><br>
-				<h3>Location</h3>
-				<input type="text" id="Location" style="width: 99%"; ><br>
-				<h3>Date<h3>
-				<input id="date" type="date">
-				<h3>Pay</h3>
-				$<input type="text" id="Payment" style="width: 18%; margin-bottom: 10px;" ><br>
-				<div class="radio">
-				  <label><input type="radio" name="optradio">Full Time (20-40+hrs/wk)</label>
+			<div id="Finder">
+				<div id="ProfilePic">
+					<a target="_blank" href="img_avatar2.png">
+						<img src="img_avatar2.png" style='height: 100%;  width: 100%; object-fit: contain'>
+					</a>
+					
 				</div>
-				<div class="radio">
-				  <label><input type="radio" name="optradio">Part Time (10-20hrs/wk)</label>
+				<h3>Name</h3>		
+					James Bond
+				<div id="City">
+					<h3>Location</h3>
+					text for address goes here
 				</div>
-				<div class="radio">
-				  <label><input type="radio" name="optradio">Small Time (1-10hrs/wk)</label>
-				</div><div class="radio">
-				  <label><input type="radio" name="optradio">One Time</label>
+				<div id="About">
+					<h3>About</h3>
+					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+					bla bla bla bla bla bla bla bla
+				
+					
+					
+					
+				</div>
+				<div id="Resume">
+					<a href="PDFtest.pdf">View Resume</a>
 				</div>
 				
-				
-				
-				<br>
-				<h3>Description</h3>
-				<textarea name="Description" style="width: 99%" rows="20%";></textarea><br>
-				<h3>Picture (optional)</h3>
-				<input type="file" name="pic" accept="image/*"><b>
-				<button id="Submit" onclick="on()"; >Submit</button>
-				
-			</form>
-      
+			</div>
+
+                
 		</div>
         <div id="Footer"></div>
         </div>

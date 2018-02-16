@@ -40,11 +40,11 @@ button, a{
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-#ExtraPics{
+#Resume{
     margin: 5px;
     float: left;
     width: 23%;
-	height: 23%;
+	height: 40%;
 }
 
 #ProfilePic{
@@ -54,7 +54,7 @@ button, a{
 	height: 25%;
 }
 
-#Employer{
+#Finder{
 	padding-left: 5px;
    `width: 74%;
     height: auto;
@@ -110,6 +110,39 @@ button, a{
     width: 450px;
     height: 170px;
     display: inline-block;
+}
+#head{
+    vertical-align: top;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 72px;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+#welcome_user{
+    display: none;
+    text-align: center;
+}
+
+
+
+#logout_button{
+        margin-right: auto;
+        margin-left: auto;
+}
+.welcome{
+        float: right;
+        width: 20%;
+        margin-right: 20px;
+        font-size: 18px;
+        color: white;
+}
+
+.welcome h4{
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 0px;
 }
 
 
