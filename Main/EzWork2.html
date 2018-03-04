@@ -50,25 +50,54 @@
 					<h3 id="job_pop_title">Title Goes Here</h3>
 					
 					<p id="job_pop_employer">Employer Name</p>
-					<p id="job_pop_type">Type</p>
-					<p id="job_pop_pay">Pay</p>
-					<p id="job_pop_loc">Location</p>
+					<p id="job_pop_typePay">Type, Pay</p>
 					<p id="job_pop_dist">Distance</p>
+					<p id="job_pop_loc">Location</p>
 					<p id="job_pop_notes">Description of Job</p>
 					<p id="job_pop_tags">Tags Tags Tags Tags Tags</p>
-					<button onclick="toggle_visibility('job_pop');">Accept</button>
+					<button id="job_pop_accept" onclick="toggle_visibility('job_pop');">Accept</button>
 					<button onclick="toggle_visibility('job_pop');">Decline</button>
 					
 				</div>
 			</div>
+			<div id="jobapp_pop" class="modal">
+				<div id="jobapp_pop_inner" class="container">
+					<h3 id="job_pop_title">Job Application</h3>
+					<p>Choose the following Info from your profile to be included in the Application</p>
+					<input id="appName" type="checkbox"></input>
+					<label id="appNameText"for="appName">Name: </label>
+					<br>
+					<input id="appLocation" type="checkbox"></input>
+					<label id="appLocationText" for="appLocation">Location: </label>
+					<br>
+					<input id="appEmail" type="checkbox"></input>
+					<label id="appEmailText" for="appEmail">Email: </label>
+					<br>
+					<input id="appPhone" type="checkbox"></input>
+					<label id="appPhoneText" for="appPhone">Phone Number: </label>
+					<br>
+					<input id="appPhoto" type="checkbox"></input>
+					<label id="appPhotoText" for="appPhoto">Photo: </label>
+					<br>
+					<input id="appBio" type="checkbox"></input>
+					<label id="appBioText" for="appBio">Bio: </label>
+					<br><br>
+					<p>Extra Notes: </p>				
+					<textarea id="appNotes" rows="5" cols="75"></textarea>
+					<br>
+					<button id="jobapp_pop_accept" onclick="toggle_visibility('jobapp_pop');">Apply</button>
+					<button onclick="toggle_visibility('jobapp_pop');">Cancel</button>
+				</div>
+			</div>
 		</div>
-	</div>
 			
       
         <div id="SideBar">
                 <!-- Logged in buttons -->
                 <li id="prof_button" style="display: none;">
-				<a href="#">My Profile</a></li>
+				<a id="prof_link" href="#">My Profile</a></li>
+                <li id="jobs_button" style="display: none;">
+				<a id="jobs_link" href="#">My Jobs</a></li>
 				<!-- Finders only -->
                 <li id="adv_search_button" style="display: none;">
 				<a href="#">Advanced Search</a></li>
@@ -78,25 +107,19 @@
 				<!-- Universal buttons -->
 				<li><a href="#">About EzWork</a></li>
 				<li><a href="#">Tutorial</a></li>
-                <li><a href="#">Logout</a></li>
+                <li id="logout_button" style="display: none;" onclick="logout()">
+				<a href="#">Logout</a></li>
 				<li><a href="#">Contact Us</a></li>
-           <!--<form>
-			<h2 div id="log">Login</h2>
-			<input type="text" placeholder="&#128272; User Name" name >
-			<input type="password" placeholder="&#128274; Password" name >
-			<input type="submit" value="signin" ><input type="submit" value="signup">
-		  </form> -->
         </div>
         <div id="MainBody">
                 <div id="searchbar">
-                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Jobs Search..">
+                <input type="text" id="mySearch" onkeyup="sort_jobs_list()" placeholder="Jobs Search..">
                 </div>
         	<div id="jobsDiv">
         	<ul id="jobList"></ul></div>
 			<!-- Items added by JS -->
-</div>
+		</div>
         <div id="Footer"></div>
-        </div>
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
         <script>
         // Initialize Firebase
@@ -111,7 +134,7 @@
         firebase.initializeApp(config);
         </script>
         <script src="EzWork.js"></script>
-        <script src="../scripts/universal.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxWZDs0PaPEVNQG8PZbxfW3W2fI19wY-8&libraries=geometry&callback=init_map" async defer></script>
 
 	</body>
 </html>
