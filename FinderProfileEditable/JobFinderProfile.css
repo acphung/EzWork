@@ -1,0 +1,259 @@
+
+body{
+    margin: 0px;
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+	background-color: #006A00;
+	height: 100%;
+}
+
+button, a{
+    font-weight: 700;
+}
+
+.buttn, .welcome button{
+  background: #006A00;
+  margin-top: 10px;
+  font-size: 14pt;
+  margin-left: 3%;
+  /*margin-right: -.6%;*/
+  margin-bottom: 10px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 15px;
+  display: inline-block;
+  width: 45%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.buttn:hover, .welcome button:hover{
+  background: #fff;
+  color: #006A00;
+  cursor: pointer;
+}
+
+#edit, #edit2, #edit3, #edit4{
+	width: 15%;
+	float: right;
+	padding-right: 0px;
+}
+#d3, #d4, #d5, #d6{
+	width: 30%;
+	float: right;
+	display: none;
+}
+
+#Container{
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Header{
+    height: 150px;
+    background-color: #006A00;
+    margin-top: 0px;
+}
+
+#name{
+	width: 98%;
+	height: 20%;
+}
+
+#phone{
+	width: 98%;
+	height: 20%;
+}
+/*
+#box4{
+	float: left;
+	margin-top:30px;
+	margin-left: -100px;
+}
+
+#box5{
+	float: left;
+	margin-top:30px;
+	margin-left: -150px;
+}
+
+#box6{
+	float: left;
+	margin-top:30px;
+	margin-left: -370px;
+}
+*/
+#City{
+	width: 98%;
+	height: 25%;
+   /* margin-top: 0px;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;*/
+}
+#About{
+	width:98%;
+	height: 25%;
+/*	padding-left: 5px;
+	padding-right: 10px;
+    margin-top: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;*/
+}
+#Resume{
+    margin: 5px;
+    float: left;
+    width: 98%;
+	height: 5%;
+}
+
+#ProfilePic{
+
+    width: 98%;
+	height: 25%;
+}
+
+#Finder{
+	padding-left: 5px;
+   `width: 74%;
+    height: auto;
+	min-height: 100%;
+	background-color: #006A60;
+	border: 4px solid #fff;
+	border-radius: 5px;
+	overflow: scroll;
+}
+
+
+#SideBar{
+    width: 25%;
+    height: 100%;
+    padding-top: 10px;
+	padding-bottom: 68px;
+    background-color: #006A00;
+    list-style-type: none;
+    float: left;
+}
+
+#SideBar li a {
+    border: 2px solid #fff; /* Add a border to all links */
+    width: 80%;
+    margin-top: -2px; /* Prevent double borders */
+    margin-left: 6%;
+    background-color: #006A00; /* Grey background color */
+    border-radius: 5px;
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: #fff; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+ 
+#SideBar li a:hover:not(.header) {
+    background-color: #fff; /* Add a hover effect to all links, except for headers */
+    color: #006A00;
+}
+
+
+#MainBody{
+    width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+    float: right;
+	height: 100%;
+	background-color: #006A00;
+}
+
+#banner{
+	margin-left: 10px;
+    width: 450px;
+    height: 170px;
+    display: inline-block;
+}
+#head{
+    vertical-align: top;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 72px;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+#welcome_user{
+    display: none;
+    text-align: center;
+}
+
+
+
+#logout_button{
+        margin-right: auto;
+        margin-left: auto;
+}
+
+.upload {
+    height: 185px;
+    width: 225px;
+    padding-left: 350px;
+}
+
+#upl{
+	float: right;
+}
+#box4{
+	float: left;
+	margin-top:30px;
+	margin-left: 0px;
+	width: 30%;
+}
+
+#box5{
+	float: left;
+	margin-top:30px;
+	margin-left: 0px;
+	width: 30%;
+}
+
+#box6{
+	float: left;
+	margin-top:30px;
+	margin-left: 0px;
+	width: 40%;
+}
+
+#box7{
+	float: left;
+	margin-top:30px;
+	margin-left: 0px;
+	width: 30%;
+}
+/*
+.welcome{
+        float: right;
+        width: 20%;
+        margin-right: 20px;
+        font-size: 18px;
+        color: white;
+}
+
+.welcome h4{
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 0px;
+}*/
+
+
+
+/*
+#ProfilePic{
+    margin: 10px;
+    float: right;
+    width: 25%;
+	height: 25%;
+}
+*/
