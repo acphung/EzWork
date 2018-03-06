@@ -10,9 +10,9 @@
 	<body>
         <div id="Container">
         <div id="Header">
-        <img id="banner" src="banner.png"> 			
+        <a href="#"><img id="banner" src="banner.png"></a>
 	</div>
-        </div>
+      <!--  </div>  -->
 			
       
         <div id="SideBar">
@@ -23,25 +23,21 @@
                 <li><a href="#">Advanced Search</a></li>
 			<!-- Employers only -->
                 <li><a href="#">Post Job</a></li>
-		<!-- Universal buttons -->
+			<!-- Universal buttons -->
 				<li><a href="#">About EzWork</a></li>
 				<li><a href="#">Tutorial</a></li>
                 <li><a href="#">Logout</a></li>
 				<li><a href="#">Contact Us</a></li>
-           <!--<form>
-			<h2 div id="log">Login</h2>
-			<input type="text" placeholder="&#128272; User Name" name >
-			<input type="password" placeholder="&#128274; Password" name >
-			<input type="submit" value="signin" ><input type="submit" value="signup">
-		  </form> -->
-		  </div>
+
+		    </div>
         </div>
         <div id="MainBody">
-					<div id="ProfilePic">
-					<!--<a target="_blank" href="img_avatar2.png"> -->
-						<img src="img_avatar2.png" style='height: 100%;  width: 100%; object-fit: contain'>
-					</a>
-					</div>
+				<div id="ProfilePic">
+					<div>
+						<input id="upl" type="file" name="picture" accept="image/*" onchange="onFileInputChange()" />
+						<img class="upload" src="" alt="upload image" title="upload image">
+					</div>	
+				</div>
 				
 				<div id="Employer" class="welcome">
 					<b>Employer</b><br>
@@ -59,34 +55,22 @@
 					<p class="p1">text for city goes here</p><br>
 					<input type="text" class="mytext" value="Enter text..." name="Test Name" id="box5" style="display:none">
 					<button id="edit2" onclick="addTextBox2(); showbutt2()">Edit</button>
-				<div id="d4">
+					<div id="d4">
 					<button id="save" onclick="showedit2(); hideTextBox2()">Save</button><button id="cancel" onclick="showedit2(); hideTextBox2()">Cancel</button></div>
 				</div>
 				
 				<div id="About" class="welcome">
 					<b>About</b><br>
 					<p class="p1">Description of company/person goes here bla bla bla </p><br>
-					<input type="text" class="mytext" value="Enter text..." name="Test Name" id="box6" style="display:none">
+					<textarea rows="4" cols="25" placeholder="Enter text..."  id="box6" style="display:none"></textarea>
 					<button id="edit3" onclick="addTextBox3(); showbutt3()">Edit</button>
 					<div id="d5">
 					<button id="save" onclick="showedit3(); hideTextBox3()">Save</button><button id="cancel" onclick="showedit3(); hideTextBox3()">Cancel</button></div>
 				</div>
-		<!--		<div id="login_pop" class="modal">
-			<div id="login_pop_inner">
-                                <span onclick="toggle_visibility('login_pop')"
-			         class="close" title="Close Modal">&times;</span>
-					 
-					  <div class="container">
-						<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Enter Notes Here">
-						</textarea>
-                        <br>
-				        <button onclick="#">Edit</button>
-				        <button onclick="toggle_visibility('login_pop')">Cancel</button>
-				        <span class="psw">Forgot <a href="#">password?</a></span> 
-                                </div>  -->
-			<div id="pics">
+
+				<div id="pics">
 					<a target="_blank" href="img_avatar2.png">
-						<img src="img_avatar2.png"  style='height: 20%; width: 20%;'/>
+						<img src="img_avatar2.png" style='height: 20%; width: 20%;'/> 
 					</a>
 		
 					<a target="_blank" href="img_avatar3.png">
@@ -100,12 +84,14 @@
 					<a target="_blank" href="img_avatar2.png">
 						<img src="img_avatar2.png" style='height: 20%; width: 20%;'>
 					</a>
-			</div>
+				</div>
 
                 
 		</div>
+	</div>
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
         <script>
+		
 		function addTextBox() {
 			var box4 = document.getElementById("box4");
 			box4.style.display = "inline";
@@ -167,6 +153,21 @@
 			button3.style.display="inline-block";
 			d5.style.display="none";
 		}
+		
+		onFileInputChange = function() {
+			var img = document.querySelector('.upload');
+			var file = document.querySelector('input[type=file]').files[0]
+			var reader = new FileReader();
+	
+			reader.addEventListener("load", function (){
+			img.src = reader.result;
+			}, false);
+	
+			if (file){
+				reader.readAsDataURL(file);
+			};
+		}
+		
 		
         // Initialize Firebase
         var config = {

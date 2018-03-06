@@ -24,56 +24,6 @@ button, a{
     margin-top: 0px;
 }
 
-/*#Employers{
-	width:98%;
-    margin-top: 0px;
-	padding-top: 5px;
-	padding-left: 5px;
-	padding-right: 10px;
-	padding-bottom: 5px;
-}
-
-#City{
-	width:98%;
-    margin-top: 0px;
-	padding-top: 5px;
-	padding-left: 5px;
-	padding-right: 10px;
-	padding-bottom: 5px;
-}
-#About{
-	width:98%;
-	padding-left: 5px;
-	padding-right: 10px;
-    margin-top: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}*/
-/*#ExtraPics{
-    margin: 5px;
-    float: left;
-    width: 23%;
-	height: 23%;
-}
-
-#ProfilePic{
-    margin: 10px;
-    float: right;
-    width: 25%;
-	height: 25%;
-}
-
-#Employer{
-	padding-left: 5px;
-   `width: 74%;
-    height: auto;
-	min-height: 100%;
-	background-color: #006A60;
-    float: right;
-	border: 4px solid #fff;
-	border-radius: 5px;
-}*/
-
 #ExtraPics{
     margin: 15px;
   /*  float: left; */
@@ -136,24 +86,25 @@ button, a{
 	margin-left: 10px;
     width: 450px;
     height: 170px;
-    display: inline-block;
+ /*   display: inline-block;*/
 }
 
 #ProfilePic{
 	width: 100%;
-	height: 20%;
-	background-color: #22522A;
+	height: 30%;
+	background-color: #006A60;
 	border-bottom: 3px solid red;
 	margin-right: 5px;
+	text-align:center;
 }
 
 #Employer{
 	width: 100%;
-	height: 20%;
+	height: 30%;
 	padding-left: 5px;
 	color: #fff;
 	border-bottom: 3px solid red;
-    background-color: #22522A;
+    background-color: #006A60;
 /*	border: 2px solid #fff;
 	background-color: #006A00;  
 	border-radius: 5px;  */
@@ -176,17 +127,18 @@ button, a{
 
 #box6{
 	float: left;
-	margin-top:30px;
+	margin-top:70px;
 	margin-left: -370px;
+	width: 40%;
 }
 
 #City{
 	width: 100%;
-	height: 20%;
+	height: 30%;
 	padding-left: 5px;
 	color: #fff;
 	border-bottom: 3px solid red;
-    background-color: #22522A;
+    background-color: #006A60;
 /*	border: 2px solid #fff;
 	border-radius: 5px;
 	background-color: #006A00; */
@@ -194,11 +146,11 @@ button, a{
 
 #About{
 	width: 100%;
-	height: 20%;
+	height: 30%;
 	padding-left: 5px;
 	color: #fff;
 	border-bottom: 3px solid red;
-    background-color: #22522A;
+    background-color: #006A60;
 /*	border: 2px solid #fff;
 	border-radius: 5px;
 	background-color: #006A00; */
@@ -213,7 +165,7 @@ button, a{
 /*	height: 20%; */
 	padding-left: 70px;
 	border-bottom: 3px solid red;
-    background-color: #22522A;
+    background-color: #006A60;
 	display: block;
 }
 
@@ -230,12 +182,6 @@ button, a{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 200px;
 }
-/*
-#but{
-	float: right;
-	
-}
-*/
 
 /* Popup Content */
 #login_pop_inner{
@@ -314,21 +260,6 @@ button, a{
     cursor: pointer;
 }
 
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-}
-
-@keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-}
 #edit{
 	width: 15%;
 	float: right;
@@ -362,4 +293,15 @@ button, a{
 	width: 30%;
 	float: right;
 	display: none;
+}
+
+#upl{
+	float:right;
+}
+
+.upload{
+	height: 185px;
+	width: 225px;
+	padding-left:250px;
+
 }
