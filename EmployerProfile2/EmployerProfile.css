@@ -72,6 +72,17 @@ button, a{
    color: #006A00;
 }
 
+#Finder{
+	padding-left: 5px;
+   `width: 74%;
+    height: auto;
+	min-height: 100%;
+	background-color: #006A60;
+	border: 4px solid #fff;
+	border-radius: 5px;
+	overflow: scroll;
+}
+
 #MainBody{
     width: 75%;
 	background-color: #006A00;
