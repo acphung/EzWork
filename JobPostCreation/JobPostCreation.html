@@ -50,37 +50,37 @@
 		  </div>
         </div>
         <div id="MainBody">
-			<form id="JobCreationForm" style="width: 99%">		
+			<div id="JobCreationForm" style="width: 99%">		
 				<h3>Job Title</h3>
 				<input type="text" id="Title" style="width: 99%"; ><br>
 				<h3>Location</h3>
 				<input type="text" id="Location" style="width: 99%"; ><br>
-				<h3>Date<h3>
-				<input id="date" type="date">
+				<!--<h3>Date<h3>
+				<input id="date" type="date">-->
 				<h3>Pay</h3>
 				$<input type="text" id="Payment" style="width: 18%; margin-bottom: 10px;" ><br>
 				<div class="radio">
-				  <label><input type="radio" name="optradio">Full Time (20-40+hrs/wk)</label>
+				  <label><input type="radio" id="full" name="optradio">Full Time (20-40+hrs/wk)</label>
 				</div>
 				<div class="radio">
-				  <label><input type="radio" name="optradio">Part Time (10-20hrs/wk)</label>
+				  <label><input type="radio" id="part" name="optradio">Part Time (10-20hrs/wk)</label>
 				</div>
 				<div class="radio">
-				  <label><input type="radio" name="optradio">Small Time (1-10hrs/wk)</label>
+				  <label><input type="radio" id="small" name="optradio">Small Time (1-10hrs/wk)</label>
 				</div><div class="radio">
-				  <label><input type="radio" name="optradio">One Time</label>
+				  <label><input type="radio" id="once" name="optradio">One Time</label>
 				</div>
 				
 				
 				
 				<br>
 				<h3>Description</h3>
-				<textarea name="Description" style="width: 99%" rows="20%";></textarea><br>
+				<textarea name="Description" id="Desc" style="width: 99%" rows="20%";></textarea><br>
 				<h3>Picture (optional)</h3>
 				<input type="file" name="pic" accept="image/*"><b>
-				<button id="Submit" onclick="on()"; >Submit</button>
+				<button id="Submit" onclick="writeJob()"; >Submit</button>
 				
-			</form>
+			</div>
       
 		</div>
         <div id="Footer"></div>
@@ -98,7 +98,7 @@
         };
         firebase.initializeApp(config);
         </script>
-        <script src="EzWork.js"></script>
-
+        <script src="JobPostCreation.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxWZDs0PaPEVNQG8PZbxfW3W2fI19wY-8&libraries=geometry&callback=mapInit" async defer></script>
 	</body>
 </html>
