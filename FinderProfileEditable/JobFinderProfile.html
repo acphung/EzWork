@@ -51,7 +51,7 @@
 				
 				<div id="name">
 					<h3>Name</h3>		
-					<p>James Bond</p>
+					<p id="namebox">James Bond</p>
 					<input type="text" class="mytext" value="Enter text..." name="Test Name" id="box" style="display:none">
 					<button id="edit" class="buttn"onclick="addTextBox(); showbutt()">Edit</button>
 					<div id="d3">
@@ -60,7 +60,7 @@
 				
 				<div id="phone">
 					<h3>Phone Number</h3>		
-					<p>(###)###-####</p>
+					<p id="phonebox">(###)###-####</p>
 					<input type="text" class="mytext" value="Enter text..." name="Test Name" id="box3" style="display:none">
 					<button id="edit4" class="buttn"onclick="addTextBox4(); showbutt4()">Edit</button>
 					<div id="d6">
@@ -69,7 +69,7 @@
 				
 				<div id="City">
 					<h3>Location</h3>
-					<p>text for address goes here</p>
+					<p id="loc">text for address goes here</p>
 					<input type="text" class="mytext" value="Enter text..." name="Test Name" id="box1" style="display:none">
 					<button id="edit2" class="buttn" onclick="addTextBox2(); showbutt2()">Edit</button>
 					<div id="d4">
@@ -78,7 +78,7 @@
 				
 				<div id="About">
 					<h3>About</h3>
-					<p>Description of company/person goes here</p>
+					<p id="abt">Description of company/person goes here</p>
 					<textarea rows="4" cols="25"  placeholder="Enter text...." id="box2" style="display:none"></textarea>
 					<button id="edit3" class="buttn" onclick="addTextBox3(); showbutt3()">Edit</button>
 					<div id="d5">
@@ -143,6 +143,8 @@
 		function showedit() {
 			button.style.display="inline-block";
 			d2.style.display="none";
+			var boxval = document.getElementById("box").value;
+			document.getElementById("namebox").innerHTML = boxval;
 		}
 		
 		var button2 = document.getElementById("edit2");
@@ -155,6 +157,8 @@
 		function showedit2() {
 			button2.style.display="inline-block";
 			d4.style.display="none";
+			var box1val = document.getElementById("box1").value;
+			document.getElementById("loc").innerHTML = box1val;
 		}
 		
 		var button3 = document.getElementById("edit3");
@@ -167,6 +171,8 @@
 		function showedit3() {
 			button3.style.display="inline-block";
 			d5.style.display="none";
+			var box2val = document.getElementById("box2").value;
+			document.getElementById("abt").innerHTML = box2val;
 		}
 		
 		var button4 = document.getElementById("edit4");
@@ -179,6 +185,8 @@
 		function showedit4() {
 			button4.style.display="inline-block";
 			d6.style.display="none";
+			var box3val = document.getElementById("box3").value;
+			document.getElementById("phonebox").innerHTML = box3val;
 		}
 		
 		onFileInputChange = function() {
