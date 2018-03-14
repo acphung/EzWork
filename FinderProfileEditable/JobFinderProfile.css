@@ -2,9 +2,11 @@
 body{
     margin: 0px;
     font-family: 'Nunito', sans-serif;
-    width: 100%;
+    max-width: 100%;
+	min-width: 80%;
 	background-color: #006A00;
-	height: 100%;
+	max-height: 100%;
+	min-height: 80%;
 }
 
 button, a{
@@ -12,7 +14,7 @@ button, a{
 }
 
 .buttn, .welcome button{
-  background: #006A00;
+  background: #006A60;
   margin-top: 10px;
   font-size: 14pt;
   margin-left: 3%;
@@ -21,9 +23,8 @@ button, a{
   color: #fff;
   border: 2px solid #fff;
   border-radius: 5px;
-  padding: 15px;
+  padding: 10px;
   display: inline-block;
-  width: 45%;
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -31,17 +32,17 @@ button, a{
 
 .buttn:hover, .welcome button:hover{
   background: #fff;
-  color: #006A00;
+  color: #006A60;
   cursor: pointer;
 }
 
 #edit, #edit2, #edit3, #edit4{
-	width: 15%;
+
 	float: right;
-	padding-right: 0px;
+	
 }
 #d3, #d4, #d5, #d6{
-	width: 30%;
+	width: 165px;
 	float: right;
 	display: none;
 }
@@ -61,61 +62,46 @@ button, a{
 
 #name{
 	width: 98%;
-	height: 20%;
+	height: 30%;
+	border-bottom: 3px solid red;
+	color: #fff;
 }
 
 #phone{
 	width: 98%;
-	height: 20%;
-}
-/*
-#box4{
-	float: left;
-	margin-top:30px;
-	margin-left: -100px;
+	height:30%;
+	border-bottom: 3px solid red;
+	color: #fff;
 }
 
-#box5{
-	float: left;
-	margin-top:30px;
-	margin-left: -150px;
-}
-
-#box6{
-	float: left;
-	margin-top:30px;
-	margin-left: -370px;
-}
-*/
 #City{
 	width: 98%;
-	height: 25%;
-   /* margin-top: 0px;
-	padding-top: 5px;
+	height: 30%;
+	border-bottom: 3px solid red;
+	color: #fff;
+	background-color: #006A60;
 	padding-left: 5px;
-	padding-right: 10px;
-	padding-bottom: 5px;*/
 }
 #About{
 	width:98%;
-	height: 25%;
-/*	padding-left: 5px;
-	padding-right: 10px;
-    margin-top: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;*/
+	height:30%;
+	border-bottom: 3px solid red;
+	color: #fff;
 }
 #Resume{
     margin: 5px;
     float: left;
     width: 98%;
-	height: 5%;
+	height:10%;
+	color: #fff;
 }
 
 #ProfilePic{
 
     width: 98%;
-	height: 25%;
+
+	border-bottom: 3px solid red;
+	color: #fff;
 }
 
 #Finder{
@@ -131,6 +117,7 @@ button, a{
 
 
 #SideBar{
+	display: block;
     width: 25%;
     height: 100%;
     padding-top: 10px;
@@ -197,14 +184,18 @@ button, a{
 }
 
 .upload {
-    height: 185px;
-    width: 225px;
-    padding-left: 350px;
+ 	height: 250px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
 }
 
 #upl{
-	float: right;
+	display: block;
+	margin: auto;
+	margin-bottom: 10px;
 }
+
 #box{
 	float: left;
 	margin-top:30px;

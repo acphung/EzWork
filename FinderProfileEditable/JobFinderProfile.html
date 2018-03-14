@@ -4,93 +4,84 @@
 	<title> Ezwork2 </title>
 	<meta charset="utf-8" />
 	<link href="JobFinderProfile.css" rel="stylesheet" type="text/css">
-	<script src="EzWork.js"></script>
         <link rel="icon" href="logo2.png">
 	<!-- <h1 div id="title">EzWork</h1> -->
 	</head>
 	<body>
         <div id="Container">
         <div id="Header">
+		<div id="welcome_user" class="welcome"> <h4 id="welcome_user_text">Welcome User</h4> <button id="logout_button" onclick="logout()">Logout</button></div> <img id="banner" src="../images/banner.png">
+
 		
-        <img id="banner" src="banner.png"> 			
 	</div>
         </div>
 			
       
-        <div id="SideBar">
-			<div id="ScrollBar">
-            <!-- Logged in buttons -->
-                <li><a href="#">My Profile</a></li>
-			<!-- Finders only -->
-                <li><a href="#">Advanced Search</a></li>
-			<!-- Employers only -->
-                <li><a href="#">Post Job</a></li>
-	        <!-- Universal buttons -->
-				<li><a href="#">About EzWork</a></li>
-				<li><a href="#">Tutorial</a></li>
-                <li><a href="#">Logout</a></li>
-				<li><a href="#">Contact Us</a></li>
-           <!--<form>
-			<h2 div id="log">Login</h2>
-			<input type="text" placeholder="&#128272; User Name" name >
-			<input type="password" placeholder="&#128274; Password" name >
-			<input type="submit" value="signin" ><input type="submit" value="signup">
-		  </form> -->
-		  </div>
-        </div>
+        <div id="SideBar"> <li><a href="../Main/EzWork2">Home</a></li>
+		<!-- Logged in buttons --> 
+		<li id="prof_button" style="display: none;"> <a id="prof_link" href="#">My Profile</a></li> 
+		<li id="jobs_button" style="display: none;"> <a id="jobs_link" href="#">My Jobs</a></li> 
+		<!-- Finders only --> 
+		<li id="adv_search_button" style="display: none;"> <a href="#">Advanced Search</a></li> 
+		<!-- Employers only --> 
+		<li id="post_job_button" style="display: none;"> <a href="../JobPostCreation/JobPostCreation.html">Post Job</a></li> 
+		<!-- Universal buttons --> 
+		<li><a href="#">About EzWork</a></li> <li><a href="#">Tutorial</a></li> 
+		<li id="logout_button" style="display: none;" onclick="logout()"> <a href="#">Logout</a></li> 
+		<li><a href="#">Contact Us</a></li> 
+		</div>
         <div id="MainBody">
 			<div id="Finder">
 				
 				<div id="ProfilePic">
 					<div>
-						<input id="upl" type="file" name="picture" accept="image/*" onchange="onFileInputChange()" />
 						<img class="upload" src="" alt="upload image" title="upload image">
+						<input id="upl" type="file" name="picture" accept="image/*" onchange="onFileInputChange()" />
 					</div>	
 					
 				</div>
 				
 				<div id="name">
-					<h3>Name</h3>		
-					<p id="namebox">James Bond</p>
-					<input type="text" class="mytext" value="Enter text..." name="Test Name" id="box" style="display:none">
-					<button id="edit" class="buttn"onclick="addTextBox(); showbutt()">Edit</button>
 					<div id="d3">
 					<button id="save" class="buttn" onclick="showedit(); hideTextBox()">Save</button><button id="cancel" class="buttn" onclick="showedit(); hideTextBox()">Cancel</button></div>
-				</div>
+					<button id="edit" class="buttn"onclick="addTextBox(); showbutt()">Edit</button>
+					<h3>Name</h3>		
+					<p id="namebox" >James Bond</p>
+					<input type="text" class="mytext" placeholder="Enter text..." name="Test Name" id="box" style="display:none">
+					</div>
 				
 				<div id="phone">
-					<h3>Phone Number</h3>		
-					<p id="phonebox">(###)###-####</p>
-					<input type="text" class="mytext" value="Enter text..." name="Test Name" id="box3" style="display:none">
 					<button id="edit4" class="buttn"onclick="addTextBox4(); showbutt4()">Edit</button>
 					<div id="d6">
 					<button id="save" class="buttn" onclick="showedit4(); hideTextBox4()">Save</button><button id="cancel" class="buttn" onclick="showedit4(); hideTextBox4()">Cancel</button></div>
-				</div>
+					<h3>Phone Number</h3>		
+					<p id="phonebox">(###)###-####</p>
+					<input type="text" class="mytext" placeholder="Enter text..." name="Test Name" id="box3" style="display:none">
+					</div>
 				
 				<div id="City">
-					<h3>Location</h3>
-					<p id="loc">text for address goes here</p>
-					<input type="text" class="mytext" value="Enter text..." name="Test Name" id="box1" style="display:none">
 					<button id="edit2" class="buttn" onclick="addTextBox2(); showbutt2()">Edit</button>
 					<div id="d4">
 					<button id="save" class="buttn" onclick="showedit2(); hideTextBox2()">Save</button><button id="cancel" class="buttn" onclick="showedit2(); hideTextBox2()">Cancel</button></div>
+					<h3>Location</h3>
+					<p id="loc">text for address goes here</p>
+					<input type="text" class="mytext" placeholder="Enter text..." name="Test Name" id="box1" style="display:none">
 				</div>
 				
 				<div id="About">
-					<h3>About</h3>
-					<p id="abt">Description of company/person goes here</p>
-					<textarea rows="4" cols="25"  placeholder="Enter text...." id="box2" style="display:none"></textarea>
 					<button id="edit3" class="buttn" onclick="addTextBox3(); showbutt3()">Edit</button>
 					<div id="d5">
 					<button id="save" class="buttn" onclick="showedit3(); hideTextBox3()">Save</button><button id="cancel" class="buttn" onclick="showedit3(); hideTextBox3()">Cancel</button></div>
-				</div>
+					<h3>About</h3>
+					<p id="abt">Description of company/person goes here</p>
+					<textarea rows="4" cols="25"  placeholder="Enter text...." id="box2" style="display:none"></textarea>
+					</div>
 				
 				<div id="Resume">
 					<div>
 						<input id="upl2" type="file" name="resume" accept=".pdf" onchange="onFileChange()" />
-						<img class="upload2" src="" alt="upload pdf" title="upload pdf">
 					</div>	
-					<a href="PDFtest.pdf">View Resume</a>
+					<a href="#">View Resume</a>
 				</div> 
 			</div> 
 		</div>
@@ -98,112 +89,6 @@
         </div>
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
         <script>
-		function addTextBox() {
-			var box4 = document.getElementById("box");
-			box4.style.display = "inline";
-		}
-		function hideTextBox() {
-			var box4 = document.getElementById("box");
-			box4.style.display = "none";
-		}
-		
-		function addTextBox2() {
-			var box5 = document.getElementById("box1");
-			box5.style.display = "inline";
-		}
-		function hideTextBox2(){
-			var box5 = document.getElementById("box1");
-			box5.style.display = "none";
-		}
-		function addTextBox3() {
-			var box6 = document.getElementById("box2");
-			box6.style.display = "inline";
-		}
-		function hideTextBox3() {
-			var box6 = document.getElementById("box2");
-			box6.style.display = "none";
-		}
-		
-		function addTextBox4() {
-			var box7 = document.getElementById("box3");
-			box7.style.display = "inline";
-		}
-		function hideTextBox4() {
-			var box7 = document.getElementById("box3");
-			box7.style.display = "none";
-		}
-		
-		var button = document.getElementById("edit");
-		var d2 = document.getElementById("d3");
-		function showbutt() {
-			button.style.display="none";
-			d2.style.display="inline";
-		}
-
-		function showedit() {
-			button.style.display="inline-block";
-			d2.style.display="none";
-			var boxval = document.getElementById("box").value;
-			document.getElementById("namebox").innerHTML = boxval;
-		}
-		
-		var button2 = document.getElementById("edit2");
-		var d4 = document.getElementById("d4");
-		function showbutt2() {
-			button2.style.display="none";
-			d4.style.display="inline";
-		}
-
-		function showedit2() {
-			button2.style.display="inline-block";
-			d4.style.display="none";
-			var box1val = document.getElementById("box1").value;
-			document.getElementById("loc").innerHTML = box1val;
-		}
-		
-		var button3 = document.getElementById("edit3");
-		var d5 = document.getElementById("d5");
-		function showbutt3() {
-			button3.style.display="none";
-			d5.style.display="inline";
-		}
-
-		function showedit3() {
-			button3.style.display="inline-block";
-			d5.style.display="none";
-			var box2val = document.getElementById("box2").value;
-			document.getElementById("abt").innerHTML = box2val;
-		}
-		
-		var button4 = document.getElementById("edit4");
-		var d6 = document.getElementById("d6");
-		function showbutt4() {
-			button4.style.display="none";
-			d6.style.display="inline";
-		}
-
-		function showedit4() {
-			button4.style.display="inline-block";
-			d6.style.display="none";
-			var box3val = document.getElementById("box3").value;
-			document.getElementById("phonebox").innerHTML = box3val;
-		}
-		
-		onFileInputChange = function() {
-			var img = document.querySelector('.upload');
-			var file = document.querySelector('input[type=file]').files[0]
-			var reader = new FileReader();
-	
-			reader.addEventListener("load", function (){
-			img.src = reader.result;
-			}, false);
-	
-			if (file){
-				reader.readAsDataURL(file);
-			};
-		}
-		
-
         // Initialize Firebase
         var config = {
           apiKey: "AIzaSyCpAKm-xa-Tz3Cix-3io2C--dby4unJbow",
@@ -215,7 +100,9 @@
         };
         firebase.initializeApp(config);
         </script>
-        <script src="EzWork.js"></script>
+			<script src="finder_prof.js"></script>
+
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxWZDs0PaPEVNQG8PZbxfW3W2fI19wY-8&libraries=geometry&callback=mapInit" async defer></script>
 
 	</body>
 </html>

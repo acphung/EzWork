@@ -197,4 +197,3 @@ firebase.auth().onAuthStateChanged(function(u){
 			});
     }
 });
-
