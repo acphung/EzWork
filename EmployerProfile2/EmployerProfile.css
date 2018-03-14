@@ -2,9 +2,11 @@ body{
     margin: 0px;
     font-family: 'Nunito', sans-serif;
 	display: block;
-    width: 100%;
+    max-width: 100%;
+	min-width: 80%;
 	background-color: #006A00;
-	height: 100%;
+	max-height: 100%;
+	min-height: 80;
 }
 
 button, a{
@@ -34,21 +36,13 @@ button, a{
 
 #SideBar{
 	display: block;
-    /*width: 25%;*/
+    width: 25%;
 	height: auto;
     padding-top: 10px;
-	position: fixed; /*relative;*/
 	padding-bottom: 68px;
     background-color: #006A00;
     list-style-type: none;
     float: left; 
-	
-}
-#ScrollBar{
-	
-    width: 25%;
-	height: auto;
-	position: fixed;
 	
 }
 
@@ -97,12 +91,11 @@ button, a{
 	margin-left: 10px;
     width: 450px;
     height: 170px;
- /*   display: inline-block;*/
+    display: inline-block;
 }
 
 #ProfilePic{
-	width: 100%;
-	height: 30%;
+	width: 98%;
 	background-color: #006A60;
 	border-bottom: 3px solid red;
 	margin-right: 5px;
@@ -110,7 +103,7 @@ button, a{
 }
 
 #Employer{
-	width: 100%;
+	width: 98%;
 	height: 30%;
 	padding-left: 5px;
 	color: #fff;
@@ -144,7 +137,7 @@ button, a{
 }
 
 #City{
-	width: 100%;
+	width: 98%;
 	height: 30%;
 	padding-left: 5px;
 	color: #fff;
@@ -156,7 +149,7 @@ button, a{
 }
 
 #About{
-	width: 100%;
+	width: 98%;
 	height: 30%;
 	padding-left: 5px;
 	color: #fff;
@@ -172,7 +165,7 @@ button, a{
 }
 
 #pics{
-	width: 100%;
+	width: 98%;
 /*	height: 20%; */
 	padding-left: 70px;
 	border-bottom: 3px solid red;
@@ -231,7 +224,7 @@ button, a{
 }
 
 .container button,.welcome button{
-  background: #006A00;
+  background: #006A60;
   margin-top: 10px;
   font-size: 14pt;
   margin-left: 3%;
@@ -240,9 +233,8 @@ button, a{
   color: #fff;
   border: 2px solid #fff;
   border-radius: 5px;
-  padding: 15px;
+  padding: 10px;
   display: inline-block;
-  width: 45%;
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -250,7 +242,7 @@ button, a{
 
 .container button:hover, .welcome button:hover{
   background: #fff;
-  color: #006A00;
+  color: #006A60;
   cursor: pointer;
 }
 
@@ -271,48 +263,27 @@ button, a{
     cursor: pointer;
 }
 
-#edit{
-	width: 15%;
-	float: right;
-	padding-right: 0px;
-}
-#d3{
-	width: 30%;
+#d3, #d4, #d5{
+	width: 165px;
 	float: right;
 	display: none;
 }
 
-#edit2{
-	width: 15%;
-	float: right;
-	padding-right: 0px;
-}
 
-#d4{
-	width: 30%;
+#edit,#edit2,#edit3{	
 	float: right;
-	display: none;
-}
-
-#edit3{
-	width: 15%;
-	float: right;
-	padding-right: 0px;
-}
-
-#d5{
-	width: 30%;
-	float: right;
-	display: none;
 }
 
 #upl{
-	float:right;
+	display: block;
+	margin: auto;
+	margin-bottom: 10px;
 }
 
 .upload{
-	height: 185px;
-	width: 225px;
-	padding-left:250px;
+	height: 250px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
 
 }
