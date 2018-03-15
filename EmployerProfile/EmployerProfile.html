@@ -4,16 +4,30 @@
 	<title> Ezwork2 </title>
 	<meta charset="utf-8" />
 	<link href="EmployerProfile.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="logo2.png">
+    <link rel="icon" href="logo2.png">
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>	
+	<script>
+		// Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCpAKm-xa-Tz3Cix-3io2C--dby4unJbow",
+          authDomain: "ezwork-89a16.firebaseapp.com",
+          databaseURL: "https://ezwork-89a16.firebaseio.com",
+          projectId: "ezwork-89a16",
+          storageBucket: "ezwork-89a16.appspot.com",
+          messagingSenderId: "526263272938"
+        };
+        firebase.initializeApp(config);
+	</script>
+    <script src="EmployerProfile.js"></script>
+		
 	<!-- <h1 div id="title">EzWork</h1> -->
 	</head>
-	<body>
+	<body onload="loadStart()">
         <div id="Container">
         <div id="Header">
-		
-        <img id="banner" src="banner.png"> 			
+        <a href="#"><img id="banner" src="banner.png"></a>
 	</div>
-        </div>
+      <!--  </div>  -->
 			
       
         <div id="SideBar">
@@ -24,120 +38,159 @@
                 <li><a href="#">Advanced Search</a></li>
 			<!-- Employers only -->
                 <li><a href="#">Post Job</a></li>
-		<!-- Universal buttons -->
+			<!-- Universal buttons -->
 				<li><a href="#">About EzWork</a></li>
 				<li><a href="#">Tutorial</a></li>
                 <li><a href="#">Logout</a></li>
 				<li><a href="#">Contact Us</a></li>
-           <!--<form>
-			<h2 div id="log">Login</h2>
-			<input type="text" placeholder="&#128272; User Name" name >
-			<input type="password" placeholder="&#128274; Password" name >
-			<input type="submit" value="signin" ><input type="submit" value="signup">
-		  </form> -->
-		  </div>
+
+		    </div>
         </div>
         <div id="MainBody">
-			<div id="Employer">
+			<div id="Finder">
 				<div id="ProfilePic">
+					<div>
+						<img class="upload" src="" alt="upload image" title="upload image">
+						<input id="upl" type="file" name="picture" accept="image/*" onchange="onFileInputChange()" />
+					</div>	
+				</div>
+				
+				<div id="Employer" class="welcome">
+					<button id="edit" onclick="addTextBox(); showbutt()">Edit</button>
+					<div id="d3">
+					<button id="save" onclick="showedit(); hideTextBox(); updProf()">Save</button><button id="cancel" onclick="showedit(); hideTextBox()">Cancel</button></div>
+					<b>Employer</b><br>
+					<p class="p1" id="emp">An Employer Name</p>
+					<br>
+					<input type="text" class="mytext" placeholder="Enter text..." name="Test Name" id="box4" style="display:none">
+					<!-- <textarea rows="4" cols="70" id="edit" contenteditable="true">Text are we are using to test</textarea> -->
+					</div>
+				
+				<div id="City" class="welcome">
+					<button id="edit2" onclick="addTextBox2(); showbutt2()">Edit</button>
+					<div id="d4">
+					<button id="save" onclick="showedit2(); hideTextBox2(); updProf()">Save</button><button id="cancel" onclick="showedit2(); hideTextBox2()">Cancel</button></div>
+					<b>City</b><br>
+					<p class="p1" id="cit">A Certain City</p><br>
+					<input type="text" class="mytext" placeholder="Enter text..." name="Test Name" id="box5" style="display:none">
+					</div>
+				
+				<div id="About" class="welcome">
+					<button id="edit3" onclick="addTextBox3(); showbutt3()">Edit</button>
+					<div id="d5">
+					<button id="save" onclick="showedit3(); hideTextBox3(); updProf()">Save</button><button id="cancel" onclick="showedit3(); hideTextBox3()">Cancel</button></div>
+					<b>About</b><br>
+					<p class="p1" id="abt">Provided Information about Employer/Company</p><br>
+					<textarea rows="4" cols="25" placeholder="Enter text..."  id="box6" style="display:none"></textarea>
+					</div>
+
+				<div id="pics">
 					<a target="_blank" href="img_avatar2.png">
-						<img src="img_avatar2.png" style='height: 100%;  width: 100%; object-fit: contain'>
+						<img src="img_avatar2.png" style='height: 20%; width: 20%;'/> 
 					</a>
-					
-				</div>
-				<h3>Employer</h3>			
-				<div id="City">
-					<h3>City</h3>
-					text for city goes here 
-				</div>
-				<div id="About">
-					<h3>About</h3>
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					Description of company/person goes here bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-					bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-					bla bla bla bla bla bla bla bla
-					
-					
-					
-				</div>
-				<div id="ExtraPics">
-					<a target="_blank" href="img_avatar2.png">
-						<img src="img_avatar2.png" style='height: 100%; width: 100%; object-fit: contain'>
-					</a>
-				</div>
-				<div id="ExtraPics">
+		
 					<a target="_blank" href="img_avatar3.png">
-						<img src="img_avatar3.png" style='height: 100%; width: 100%; object-fit: contain'>
+						<img src="img_avatar3.png" style='height: 20%; width: 20%;'>
 					</a>
-				</div>
-				<div id="ExtraPics">
+			
 					<a target="_blank" href="img_avatar4.png">
-						<img src="img_avatar4.png" style='height: 100%; width: 100%; object-fit: contain'>
+						<img src="img_avatar4.png" style='height: 20%; width: 20%;'>
 					</a>
-				</div>
-				<div id="ExtraPics">
+			
 					<a target="_blank" href="img_avatar2.png">
-						<img src="img_avatar2.png" style='height: 100%; width: 100%; object-fit: contain'>
+						<img src="img_avatar2.png" style='height: 20%; width: 20%;'>
 					</a>
 				</div>
-			</div>
 
-                
+             </div>   
 		</div>
-        <div id="Footer"></div>
-        </div>
-        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-        <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyCpAKm-xa-Tz3Cix-3io2C--dby4unJbow",
-          authDomain: "ezwork-89a16.firebaseapp.com",
-          databaseURL: "https://ezwork-89a16.firebaseio.com",
-          projectId: "ezwork-89a16",
-          storageBucket: "ezwork-89a16.appspot.com",
-          messagingSenderId: "526263272938"
-        };
-        firebase.initializeApp(config);
-        </script>
-        <script src="EzWork.js"></script>
+	</div>
 
+        <script>
+		
+		function addTextBox() {
+			var box4 = document.getElementById("box4");
+			box4.style.display = "inline";
+		}
+		function hideTextBox() {
+			var box4 = document.getElementById("box4");
+			box4.style.display = "none";
+		}
+		
+		function addTextBox2() {
+			var box5 = document.getElementById("box5");
+			box5.style.display = "inline";
+		}
+		function hideTextBox2(){
+			var box5 = document.getElementById("box5");
+			box5.style.display = "none";
+		}
+		function addTextBox3() {
+			var box6 = document.getElementById("box6");
+			box6.style.display = "inline";
+		}
+		function hideTextBox3() {
+			var box6 = document.getElementById("box6");
+			box6.style.display = "none";
+		}
+		
+		var button = document.getElementById("edit");
+		var d2 = document.getElementById("d3");
+		function showbutt() {
+			button.style.display="none";
+			d2.style.display="inline";
+		}
+
+		function showedit() {
+			button.style.display="inline-block";
+			d2.style.display="none";
+			var box4val = document.getElementById("box4").value;
+			document.getElementById("emp").innerHTML = box4val;
+		}
+		
+		var button2 = document.getElementById("edit2");
+		var d4 = document.getElementById("d4");
+		function showbutt2() {
+			button2.style.display="none";
+			d4.style.display="inline";
+		}
+
+		function showedit2() {
+			button2.style.display="inline-block";
+			d4.style.display="none";
+			var box5val = document.getElementById("box5").value;
+			document.getElementById("cit").innerHTML = box5val;
+		}
+		
+		var button3 = document.getElementById("edit3");
+		var d5 = document.getElementById("d5");
+		function showbutt3() {
+			button3.style.display="none";
+			d5.style.display="inline";
+		}
+
+		function showedit3() {
+			button3.style.display="inline-block";
+			d5.style.display="none";
+			var box6val = document.getElementById("box6").value;
+			document.getElementById("abt").innerHTML = box6val;
+		}
+		
+		onFileInputChange = function() {
+			var img = document.querySelector('.upload');
+			var file = document.querySelector('input[type=file]').files[0]
+			var reader = new FileReader();
+	
+			reader.addEventListener("load", function (){
+			img.src = reader.result;
+			}, false);
+	
+			if (file){
+				reader.readAsDataURL(file);
+			};
+		}
+		
+        </script>
 	</body>
 </html>
+
