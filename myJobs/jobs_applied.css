@@ -3,6 +3,10 @@ body{
     font-family: 'Nunito', sans-serif;
 }
 
+html{
+	background-color: #e0e0e0;
+}
+
 button, a{
     font-weight: 700;
 }
@@ -52,9 +56,8 @@ button, a{
 #MainBody{
     width: 75%;
     height: 100%;
-    background-color: white;
+    background-color: #e0e0e0;
     float: right;
-	background: #006A60;
 }
 
 #banner{
@@ -152,7 +155,7 @@ button, a{
 	width: 100%;
 }
 
-#job_pop_inner, #jobapp_pop_inner{
+#app_pop_inner{
 	background-color: #006A00;
 	color: white;
 	border-radius: 15px;
@@ -162,32 +165,17 @@ button, a{
 	padding-top: 5px
 }
 
-#job_pop_inner p, #job_pop_inner h3{
+#app_pop_inner p{
 	margin-left: 8px;
 	margin-top: 2px;
 	margin-bottom: 0px;
 }
 
-#jobapp_pop_inner p, #jobapp_pop_inner h3{
-	margin-left: 8px;
-	margin-top: 2px;
-	margin-bottom: 0px;
-}
 
-#jobapp_pop_inner input{
-    display: inline-block;
-    width: auto;
-}
 
-#jobapp_pop_inner textarea{
-    margin-left: 10px;
-}
-
-#job_pop_pic{
+#app_pop_pic{
 	float: right;
 	margin: 10px;
-	margin-right: 15px;
-	height: 175px;
 }
 
 
@@ -250,29 +238,6 @@ button, a{
   cursor: pointer;
 }
 
-/* The Close Button */
-.close{
-    /* Position it in the top right corner outside of the modal */
-    /* NOTE DYLAN DOES NOT LIKE THE X THERE */
-    position: absolute;
-    right: 25px;
-    top: 0; 
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-/* Close button on hover */
-.close:hover{
-    color: red;
-    cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
 
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 
@@ -305,12 +270,76 @@ button, a{
 	/* pick a new color this is placeholder */
 	border: 1px solid #5070ff; /* blue border on focus */
 }
+#rejectedDiv{
+	overflow: auto;
+	border-bottom: 2px solid #006A60;
+
+}
+#rejected{
+    margin-bottom: 0px;
+	background-color: #006A60;
+	text-align: center;
+	justify-content: center;
+    text-decoration: none; /* Remove default text underline */
+    color: white; /* Add text color */
+    display: flex;
+
+}
+#rejectedList {
+    /* Remove default list styling */
+    list-style-type: none;
+    margin: 0; 
+    padding: 0;
+}
+#rejectedList li {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    margin-bottom: 0px;
+    text-decoration: none; /* Remove default text underline */
+    color: black; /* Add text color */
+    display: flex; 
+}
+#acceptedDiv{
+	overflow: auto;
+	
+
+}
+#accepted{
+    margin-bottom: 0px;
+	background-color: #006A60;
+	text-align: center;
+	justify-content: center;
+    text-decoration: none; /* Remove default text underline */
+    color: white; /* Add text color */
+    display: flex;
+
+}
+#acceptedList {
+    /* Remove default list styling */
+    list-style-type: none;
+    margin: 0; 
+    padding: 0;
+}
+#acceptedList li {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    margin-bottom: 0px;
+    text-decoration: none; /* Remove default text underline */
+    color: black; /* Add text color */
+    display: flex; 
+}
 
 #jobsDiv{
 	overflow: auto;
-	height: 100%;
-	background: #006A60;
-	padding-bottom: 9.8px;
+}
+#open{
+    margin-bottom: 0px;
+	background-color: #006A60;
+	text-align: center;
+	justify-content: center;
+    text-decoration: none; /* Remove default text underline */
+    color: white; /* Add text color */
+    display: flex;
 }
 
 #jobList {
@@ -322,6 +351,15 @@ button, a{
 
 #jobList li {
     border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    margin-bottom: 0px;
+    text-decoration: none; /* Remove default text underline */
+    color: black; /* Add text color */
+    display: flex; 
+}
+#jobList .appli{
+	padding-left: 10%;
+	border: 1px solid #ddd;
     margin-top: -1px; /* Prevent double borders */
     margin-bottom: 0px;
     text-decoration: none; /* Remove default text underline */
@@ -361,37 +399,36 @@ button, a{
 	margin: 0px;
 }
 
-#jobList li:nth-child(odd){
+#jobList .appli{
     background-color: #ededed;
 }
-#jobList li:nth-child(even){
+#jobList li{
     background-color: #e0e0e0;
 }
 
-#jobList li:nth-child(odd):hover{
+#jobList .appli:hover{
     background-color: #f5f5f5;
 }
-#jobList li:nth-child(even):hover{
+#jobList li:hover{
     background-color: #d5d5d5;
 }
-
-
-#jobList .appli {
-	width: 75%;
-	float: right;
-    display: flex; 
+.remove{
+  background: #e0e0e0;
+  margin-top: 5px;
+  float: right;
+  font-size: 14pt;
+  color: #006A60;
+  border: 2px solid #006A60;
+  border-radius: 5px;
+  padding: 15px;
+  display: inline-block;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+	
+}
+.remove:hover{
+	background-color: #006A60;
+	color: #ffffff;
 }
 
-#jobList .appli:nth-child(odd){
-    background-color: #ededed;
-}
-#jobList .appli:nth-child(even){
-    background-color: #e0e0e0;
-}
-
-#jobList .appli:nth-child(odd):hover{
-    background-color: #f5f5f5;
-}
-#jobList .appli:nth-child(even):hover{
-    background-color: #d5d5d5;
-}
